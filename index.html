@@ -40,7 +40,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 40px;
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
         }
         .button {
             background-color: #25D366;
@@ -56,8 +57,10 @@
             background-color: #128C7E;
         }
         .text-list {
-            width: 45%;
-            padding-left: 50px;
+            width: 100%;
+            max-width: 600px;
+            padding-left: 0;
+            text-align: center;
         }
         .text-list h2 {
             margin-top: 0;
@@ -70,7 +73,9 @@
             margin-bottom: 0.5rem;
         }
         .card {
-            width: 55%;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 1rem;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -95,8 +100,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 40px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
         }
         .features h2 {
             width: 100%;
@@ -106,8 +111,8 @@
         .features ul {
             list-style-type: none;
             padding: 0;
-            flex: 1;
-            min-width: 300px;
+            margin: 0;
+            text-align: left;
         }
         .features li {
             display: flex;
@@ -119,6 +124,12 @@
             content: '✔';
             color: #25D366;
             margin-right: 10px;
+        }
+        .features .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
         }
         .images-section {
             margin: 2rem auto;
@@ -162,6 +173,39 @@
             text-decoration: none;
             margin: 0 0.5rem;
         }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .text-list {
+                width: 45%;
+                padding-left: 50px;
+                text-align: left;
+            }
+            .card {
+                width: 55%;
+                margin-bottom: 0;
+            }
+            .features .feature-list {
+                flex-direction: row;
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav a {
+                float: none;
+                width: 100%;
+            }
+            .features ul {
+                text-align: center;
+            }
+            .features .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -194,34 +238,36 @@
     </div>
     <div class="features">
         <h2>17+ Tools In Single Software All Features</h2>
-        <ul>
-            <li>Send Unlimited WhatsApp Messages</li>
-            <li>Bulk Send Message To Group</li>
-            <li>Message Delay Time Management</li>
-            <li>Grab WhatsApp Group Links From Web</li>
-            <li>All Files Supported Including Videos</li>
-        </ul>
-        <ul>
-            <li>Extract WhatsApp Group Member</li>
-            <li>WhatsApp Autoresponder Chat Bot</li>
-            <li>Auto Group Joiner</li>
-            <li>Google Map Data Extractor</li>
-            <li>All Social Media Data Extractor</li>
-        </ul>
-        <ul>
-            <li>Lifetime Access</li>
-            <li>Unlimited Installation</li>
-            <li>AI-Based</li>
-            <li>100% Resell Rights</li>
-            <li>No Monthly Fees</li>
-        </ul>
-        <ul>
-            <li>One Time Payment</li>
-            <li>License Key Manager</li>
-            <li>24/7 Support Available on WhatsApp</li>
-            <li>Free Bonuses</li>
-            <li>Tutorial Video Provided</li>
-        </ul>
+        <div class="feature-list">
+            <ul>
+                <li>Send Unlimited WhatsApp Messages</li>
+                <li>Bulk Send Message To Group</li>
+                <li>Message Delay Time Management</li>
+                <li>Grab WhatsApp Group Links From Web</li>
+                <li>All Files Supported Including Videos</li>
+            </ul>
+            <ul>
+                <li>Extract WhatsApp Group Member</li>
+                <li>WhatsApp Autoresponder Chat Bot</li>
+                <li>Auto Group Joiner</li>
+                <li>Google Map Data Extractor</li>
+                <li>All Social Media Data Extractor</li>
+            </ul>
+            <ul>
+                <li>Lifetime Access</li>
+                <li>Unlimited Installation</li>
+                <li>AI-Based</li>
+                <li>100% Resell Rights</li>
+                <li>No Monthly Fees</li>
+            </ul>
+            <ul>
+                <li>One Time Payment</li>
+                <li>License Key Manager</li>
+                <li>24/7 Support Available on WhatsApp</li>
+                <li>Free Bonuses</li>
+                <li>Tutorial Video Provided</li>
+            </ul>
+        </div>
     </div>
     
       <footer>
@@ -229,5 +275,3 @@
           <a href="#">Terms of Service</a>
           <a href="#">Contact Us</a>
       </footer>
-  </body>
-  </html>
